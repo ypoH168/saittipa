@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week05 – Форми, Таблиці, Списки</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <section id="hobby">
+      <h2>Мої улюблені хобі</h2>
+      <ul>
+        <li>Програмування</li>
+        <li>Читання книг</li>
+        <li>Фотографія</li>
+        <li>Подорожі</li>
+        <li>Готувати смачну їжу</li>
+      </ul>
+    </section>
+
+    <section id="schedule">
+      <h2>Розклад занять на тиждень</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>День тижня</th>
+            <th>Предмет</th>
+            <th>Час</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Понеділок</td>
+            <td>HTML & CSS</td>
+            <td>8:00 – 12:00</td>
+          </tr>
+          <tr>
+            <td>Середа</td>
+            <td>JavaScript</td>
+            <td>18:00 – 20:00</td>
+          </tr>
+          <tr>
+            <td>П’ятниця</td>
+            <td>Flexbox + Адаптив</td>
+            <td>18:00 – 20:00</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="form">
+      <h2>Зворотний зв’язок</h2>
+      <form action="#" method="post">
+        <label>
+          Ім’я:<br>
+          <input type="text" name="name" required placeholder="Введіть ваше ім’я">
+        </label>
+
+        <label>
+          Email:<br>
+          <input type="email" name="email" required placeholder="example@gmail.com">
+        </label>
+
+        <label>
+          Повідомлення:<br>
+          <textarea name="message" rows="6" required placeholder="Напишіть ваше повідомлення..."></textarea>
+        </label>
+
+        <button type="submit">Відправити повідомлення</button>
+      </form>
+    </section>
+
+
+    <section id="register">
+      <h2>Реєстрація нового користувача</h2>
+      <form action="#" method="post" class="register-form">
+
+        <label>
+          Ім’я:<br>
+          <input type="text" name="username" required placeholder="Іван Петренко">
+        </label>
+
+        <label>
+          Email:<br>
+          <input type="email" name="email" required placeholder="ivan@example.com">
+        </label>
+
+        <label>
+          Пароль:<br>
+          <input type="password" name="password" required minlength="6">
+        </label>
+
+        <label>
+          Підтвердження пароля:<br>
+          <input type="password" name="password2" required minlength="6">
+        </label>
+
+        <label>
+          Вік:<br>
+          <input type="number" name="age" min="10" max="100" required>
+        </label>
+
+        <p>Стать:</p>
+        <label class="radio-label">
+          <input type="radio" name="gender" value="male" required> Чоловік
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="gender" value="female" required> Жінка
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="terms" required>
+          Я приймаю <a href="#" target="_blank">умови використання</a>
+        </label>
+        <button type="submit" class="register-btn">Зареєструватися</button>
+      </form>
+    </section>
+
+  </div>
+</body>
+</html>

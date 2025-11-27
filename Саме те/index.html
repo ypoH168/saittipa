@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pocoyo — Король вебу</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;700&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+min-height:100vh;
+color:#fff;
+overflow-x:hidden;
+position:relative
+}
+body::before{
+content:"";
+position:absolute;
+top:0;left:0;right:0;bottom:0;
+background:radial-gradient(circle at 20% 80%,rgba(120,119,198,0.3) 0%,transparent 50%),
+           radial-gradient(circle at 80% 20%,rgba(255,100,200,0.3) 0%,transparent 50%);
+pointer-events:none;
+animation:pulse 10s infinite alternate;
+}
+@keyframes pulse{0%{opacity:.6}100%{opacity:1}}
+
+header{
+position:relative;
+padding:60px 20px 140px;
+text-align:center;
+overflow:hidden
+}
+header::after{
+content:"";
+position:absolute;
+bottom:0;left:0;right:0;height:100px;
+background:linear-gradient(transparent,#000);
+}
+h1{
+font-family:'Fredoka One',cursive;
+font-size:4.5em;
+background:linear-gradient(90deg,#ff6bff,#00f2ff,#ffdd00);
+-webkit-background-clip:text;
+background-clip:text;
+-webkit-text-fill-color:transparent;
+text-shadow:0 0 30px rgba(255,255,255,.5);
+animation:float 4s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+h2{
+font-size:1.6em;
+margin-top:15px;
+opacity:.9;
+letter-spacing:3px
+}
+
+.pocoyo{
+position:absolute;
+bottom:-30px;
+right:50px;
+width:220px;
+filter:drop-shadow(0 20px 30px rgba(0,0,0,.4));
+transition:all .4s;
+z-index:10;
+animation:bounce 3s infinite;
+}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+
+.eyes{
+position:absolute;
+top:88px;
+right:128px;
+width:40px;
+display:flex;
+gap:16px;
+}
+.eye{
+width:18px;height:18px;
+background:#fff;
+border-radius:50%;
+position:relative;
+overflow:hidden;
+box-shadow:inset 0 0 10px #000;
+}
+.pupil{
+width:10px;height:10px;
+background:#000;
+border-radius:50%;
+position:absolute;
+top:4px;left:4px;
+transition:all .1s;
+box-shadow:0 0 10px #00ffff;
+}
+
+.cloud{
+position:absolute;
+opacity:.7;
+animation:drift 30s linear infinite;
+filter:brightness(1.2) saturate(1.5);
+}
+.cloud:nth-child(1){width:180px;top:80px;left:-200px;animation-delay:0s}
+.cloud:nth-child(2){width:240px;top:140px;left:-300px;animation-delay:10s}
+.cloud:nth-child(3){width:150px;top:50px;left:-180px;animation-delay:20s}
+@keyframes drift{0%{transform:translateX(0)}100%{transform:translateX(calc(100vw + 300px))}}
+
+main{
+max-width:950px;
+margin:50px auto;
+padding:40px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+border-radius:30px;
+border:1px solid rgba(255,255,255,0.2);
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+animation:slideUp .8s ease;
+}
+@keyframes slideUp{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
+
+h3{
+font-family:'Fredoka One',cursive;
+font-size:2.4em;
+background:linear-gradient(90deg,#ff6ec4,#7873f5);
+padding:15px 30px;
+border-radius:50px;
+display:inline-block;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+margin-bottom:30px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:rgba(0,0,0,0.2);
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+th{
+background:linear-gradient(45deg,#ff6ec4,#7873f5);
+padding:20px;
+font-size:1.3em;
+text-transform:uppercase;
+letter-spacing:2px;
+}
+td{
+padding:18px;
+background:rgba(255,255,255,0.05);
+transition:all .3s;
+}
+tr:hover td{background:rgba(255,255,255,0.15)}
+td a{
+color:#fff;
+text-decoration:none;
+font-weight:bold;
+padding:12px 25px;
+background:linear-gradient(45deg,#ff6bff,#00f2ff);
+border-radius:50px;
+display:inline-block;
+transition:all .4s;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+td a:hover{
+transform:scale(1.15) translateY(-5px);
+box-shadow:0 20px 40px rgba(0,0,0,.5);
+}
+
+footer{
+text-align:center;
+padding:40px;
+font-size:1.4em;
+font-weight:bold;
+background:linear-gradient(transparent,rgba(0,0,0,0.8));
+}
+</style>
+</head>
+<body>
+
+<img src="https://pngimg.com/uploads/cloud/cloud_PNG27.png" class="cloud">
+<img src="https://pngimg.com/uploads/cloud/cloud_PNG27.png" class="cloud">
+<img src="https://pngimg.com/uploads/cloud/cloud_PNG27.png" class="cloud">
+
+<header>
+<h1>Технології Web-програмування</h1>
+<h2>Студент: Подолян Руслан </h2>
+<img src="https://i.imgur.com/9jX5G5b.png" class="pocoyo" id="pocoyo">
+<div class="eyes">
+<div class="eye"><div class="pupil" id="pupilL"></div></div>
+<div class="eye"><div class="pupil" id="pupilR"></div></div>
+</div>
+</header>
+
+<main>
+<h3>HTML/CSS — Легенда</h3>
+<table>
+<tr><th>№</th><th>Тема</th><th>Go!</th></tr>
+<tr><td>1</td><td>Основи HTML</td><td><a href="file:///C:/Users/Asus/Desktop/%D1%81%D0%B0%D0%B9%D1%82/week01/index.html">Запустити</a></td></tr>
+<tr><td>2</td><td>CSS стилізація</td><td><a href="file:///C:/Users/Asus/Desktop/%D1%81%D0%B0%D0%B9%D1%82/Wee%D0%BA2/index.html">Запустити</a></td></tr>
+<tr><td>3</td><td>Селектори та кольори</td><td><a href="hw3/index.html">Запустити</a></td></tr>
+<tr><td>4</td><td>Шрифти та ефекти</td><td><a href="file:///C:/Users/Asus/Desktop/%D1%81%D0%B0%D0%B9%D1%82/Week4/index.html">Запустити</a></td></tr>
+<tr><td>5</td><td>Таблиці</td><td><a href="file:///C:/Users/Asus/Desktop/%D1%81%D0%B0%D0%B9%D1%82/week05/index.html">Запустити</a></td></tr>
+</table>
+
+<h3>JavaScript — Магія</h3>
+<table>
+<tr><th>№</th><th>Тема</th><th>Go!</th></tr>
+<tr><td>1</td><td>Основи JS</td><td><a href="#">Активувати</a></td></tr>
+<tr><td>2</td><td>DOM</td><td><a href="#">Активувати</a></td></tr>
+</table>
+</main>
+
+<footer>Pocoyo — король цього сайту</footer>
+
+<script>
+const pupilL = document.getElementById('pupilL')
+const pupilR = document.getElementById('pupilR')
+const pocoyo = document.getElementById('pocoyo')
+
+document.addEventListener('mousemove', e => {
+const x = (e.clientX / innerWidth - 0.5) * 30
+const y = (e.clientY / innerHeight - 0.5) * 30
+pupilL.style.transform = `translate(${x}px, ${y}px)`
+pupilR.style.transform = `translate(${x}px, ${y}px)`
+pocoyo.style.transform = `translateX(${x*3}px) rotate(${x/2}deg)`
+})
+</script>
+</body>
+</html>
