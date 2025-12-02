@@ -1,47 +1,87 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(120deg, #dff6ff, #ffffff);
+  color: #2c2c2c;
+}
+
 header {
-  background: lightblue;
-  padding: 20px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  padding: 25px;
   text-align: center;
+  border-radius: 0 0 25px 25px;
 }
 
 header h1 {
-  margin: 0;
-  color: darkblue;
+  margin: 0 0 10px 0;
+  color: white;
+  font-size: 32px;
 }
 
 nav a {
-  margin: 0 10px;
+  margin: 0 12px;
   text-decoration: none;
-  color: black;
+  color: white;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: 0.3s;
 }
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
 main {
-  padding: 20px;
+  padding: 30px;
+  display: grid;
+  gap: 25px;
+}
+
+section {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 #about {
-  background: #f9f9f9;
-  padding: 10px;
+  background: #f6f9ff;
+}
+
+#contacts {
+  background: rgb(235, 245, 255);
 }
 
 #hobbies ul {
   list-style-type: square;
-}
-footer {
-  background: lightgray;
-  text-align: center;
-  padding: 10px;
-  font-size: 14px;
-}
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
+  padding-left: 20px;
 }
 
 h2 {
   font-size: 24px;
-  color: darkred;
+  color: #ff5e62;
+  margin-bottom: 10px;
 }
 
 p {
   font-size: 16px;
+  color: #444444;
+}
+
+.intro {
+  font-size: 18px;
+  color: #4facfe;
+  font-weight: bold;
+}
+
+footer {
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  color: white;
+  border-radius: 25px 25px 0 0;
+  margin-top: 30px;
 }
